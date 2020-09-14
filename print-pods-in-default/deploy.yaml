@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: print-pods-in-default
+  labels:
+    app: print-pods-in-default
+spec:
+  selector:
+    matchLabels:
+      app: print-pods-in-default
+  template:
+    metadata:
+      labels:
+        app: print-pods-in-default
+    spec:
+      containers:
+      - name: print-pods-in-default
+        image: print-pods-in-default
+        ports:
+        - containerPort: 8000
